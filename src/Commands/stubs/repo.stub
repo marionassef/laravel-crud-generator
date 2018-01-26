@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Repos;
+
+use App\DummyModel;
+use Illuminate\Database\Eloquent\Model;
+
+class DummyRepo extends AbstractRepo
+{
+    public function __construct()
+    {
+        $this->model = new DummyModel();
+    }
+
+        protected function filter($filters)
+          {
+              $filters = $this->prepareFilters($filters);
+
+              $query = $this->model;
+
+              return $query->where($filters);
+          }
+
+          /**
+           * @param $data
+           *
+           * @return \Illuminate\Database\Eloquent\Model
+           */
+          public function create($data)
+          {
+              return parent::create($data);
+          }
+}

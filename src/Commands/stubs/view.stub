@@ -1,0 +1,56 @@
+@extends('common.base')
+
+@section('content')
+
+    @if(session('validationErrors'))
+        <div class="alert alert-danger" role="alert">
+            <button class="close" data-dismiss="alert"></button>
+            {{session('validationErrors')}}
+        </div>
+    @endif
+   <div class="card">
+        <div class="card-block">
+            <div class="card-header no-bg b-a-0">
+                    <h4>DummyView <span class="semi-bold">Table</span></h4>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <a href="javascript:;" class="reload"></a>
+                        <a href="javascript:;" class="remove"></a>
+                    </div>
+                </div>
+
+
+                <div class="grid-body no-border">
+                    <form role="form" >
+                        {{csrf_field()}}
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input class="form-control" id="name" name="name" type="text" required="required"
+                                   value="{{$item->full_name }}" aria-required="true" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input class="form-control" id="email" name="email" type="text"
+                                   value="{{$item->email }}" aria-required="true" readonly>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input class="form-control" id="phone" name="phone" type="text"
+                                   value="{{$item->phone }}" aria-required="true" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Account Type</label>
+                            <input class="form-control" id="massage" name="massage" type="text"
+                                   value="{{$item->account_type }}"
+                                   aria-required="true" readonly>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+@stop

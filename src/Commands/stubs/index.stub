@@ -1,0 +1,80 @@
+@extends('common.base')
+
+@section('content')
+
+    @if(session('success'))
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span>Ã—</span><span class="sr-only">Close</span>
+            </button>
+            Saving operation completed successfully.
+        </div>
+    @endif
+    <div class="row">
+        <div class="col-md-12">
+            <div class="grid simple ">
+                <div class="grid-title no-border">
+                    {{--<h4>Table <span class="semi-bold">Styles</span></h4>--}}
+
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <a href="javascript:;" class="reload"></a>
+                        <a href="javascript:;" class="remove"></a>
+                    </div>
+                </div>
+                <div class="grid-body no-border">
+                    <h3>{{'DummyView'}} <span class="semi-bold">Table</span></h3>
+                    <div><a href="{{url('dashboard/DummyView/item')}}" style="float: right" class="btn btn-info btn-round m-r-xs m-b-xs">Add {{'dummyclass'}}</a><br></div>
+
+                        <div class="card-block">
+                        <div class="table-responsive">
+                            <table id="example" class="display" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th class="sorting">#</th>
+                                    <th class="sorting">Name</th>
+                                    <th class="sorting">Email</th>
+                                    <th class="sorting">role</th>
+                                    <th style="width:30%"></th>
+                                </tr>
+                                </thead>
+                                @php $x=1; @endphp
+                                <tbody>
+                                @forelse($items as $item)
+                                    <tr>
+                                        <td class="v-align-middle">
+                                            {{$x}}
+                                        </td>
+                                        <td class="v-align-middle">{{$item->name}}</td>
+                                        <td class="v-align-middle"><span class="muted">{{$item->email}}</span>
+                                        <td class="v-align-middle">{{$item->role}}</td>
+                                        <td class="v-align-middle">
+                                            <div class="action-bar pull-right">
+                                                <a href="{{url('dashboard/DummyView/item/view/'.$item->id)}}"
+                                                   class="btn btn-primary btn-round m-r-xs m-b-xs">View</a>
+                                                <a href="{{url('dashboard/DummyView/item/'.$item->id)}}"
+                                                   class="btn btn-warning btn-round m-r-xs m-b-xs">Edit</a>
+                                                <a href="{{url('dashboard/DummyView/item/'.$item->id)}}"
+                                                   class="btn btn-danger btn-round m-r-xs m-b-xs deleter">Delete</a>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    @php $x++; @endphp
+                                @empty
+                                    <tr>
+                                        <td colspan="41" class="text-center">No records were found.</td>
+                                    </tr>
+                                @endforelse
+
+                                </tbody>
+                            </table>
+                            <div class="col-md-12">
+                                {{--{!! $items->render() !!}--}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@stop

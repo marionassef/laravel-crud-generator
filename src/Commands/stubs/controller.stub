@@ -1,0 +1,84 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\DummyModel;
+use Alert;
+use Illuminate\Http\Request;
+use Ramsey\Uuid\Uuid;
+
+
+class DummyClass extends Controller
+{
+     public function __construct()
+        {
+            $this->middleware('auth');
+        }
+
+        /**
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function index()
+        {
+            $items =DummyModel::all();
+
+            return view('dashboard/DummyModel.index', compact('items'));
+        }
+
+        /**
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function item($item_id = null)
+        {
+            $item = DummyModel::firstOrNew(['id'=>$item_id]);
+
+            return view('dashboard/DummyModel.edit', compact('item'));
+        }
+
+        /**
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function viewItem($item_id )
+        {
+            $item = DummyModel::firstOrNew(['id'=>$item_id]);
+
+            return view('dashboard/DummyModel.View', compact('item'));
+        }
+
+        /**
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function store($item_id = null)
+        {
+            $item =DummyModel::firstOrNew(['id'=>$item_id]);
+            $data = request()->all();
+            $Model =  new DummyModel;
+            if (!$item->id) {
+            $validator = Validator::make($data,$Model->createValidation);
+                if ($validator->fails()) {
+                    return redirect()->back()->withErrors($validator);
+                }
+               $generateId = Uuid::uuid1();
+               $item_id = $generateId->toString();
+            }
+             $validator = Validator::make($data,$Model->updateValidation);
+                if ($validator->fails()) {
+                    return redirect()->back()->withErrors($validator);
+                }
+            DummyModel::updateOrCreate(
+            ['id' => $item_id],$data);
+            return redirect('dashboard/DummyModel')->with('success', true);
+        }
+
+        public function Delete($item_id = null)
+            {
+                $item =DummyModel::firstOrNew(['id'=>$item_id]);
+                $item->delete();
+
+                return redirect('dashboard/DummyModel')->with('success', true);
+            }
+}

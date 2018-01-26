@@ -1,0 +1,27 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class DummyClass extends Model
+{
+
+   protected $table = 'DummyModel';
+   protected $guarded = [];
+   protected $hidden = [];
+   protected $dates = [];
+   protected $incrementing = false;
+
+   public function createValidation($id){
+        return [
+        ];
+   }
+
+   public function updateValidation($id){
+           return [
+
+           ];
+   }
+
+}

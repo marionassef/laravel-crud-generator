@@ -1,0 +1,63 @@
+@extends('common.base')
+
+@section('content')
+    @if(count($errors))
+
+        <div class="alert alert-danger" role="alert">
+            <button class="close" data-dismiss="alert"></button>
+
+            @foreach($errors->all() as $error)
+                <br>{{$error}}
+            @endforeach
+        </div>
+    @endif
+   <div class="card">
+        <div class="card-block">
+            <div class="card-header no-bg b-a-0">
+                    <h4>DummyView <span class="semi-bold">Tables</span></h4>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <a href="javascript:;" class="reload"></a>
+                        <a href="javascript:;" class="remove"></a>
+                    </div>
+                </div>
+
+
+                <div class="grid-body no-border">
+                    <form role="form" method="POST">
+                        {{csrf_field()}}
+
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input class="form-control" id="name" name="name" type="text" required="required"
+                                   value="{{$item->full_name }}" aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input class="form-control" id="email" name="email" type="text" required="required"
+                                   value="{{$item->email }}" aria-required="true">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input class="form-control" id="phone" name="phone" type="text" required="required"
+                                   value="{{$item->phone }}" aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Account Type</label>
+                            <input class="form-control" id="account_type" name="account_type" type="text"
+                                   required="required" value="{{$item->account_type }}"
+                                   aria-required="true">
+                        </div>
+
+                        <button class="btn btn-success btn-cons">
+                            Save
+                        </button>
+                    </form>
+                </div>
+            </div>
+    </div>
+@stop

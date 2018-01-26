@@ -1,0 +1,7 @@
+
+    #### DummyRoute control
+    Route::post('getAll', 'DummyViewApiController@ReturnAll');
+    Route::post('getById', 'DummyViewApiController@ReturnById');
+    Route::post('createItem', 'DummyViewApiController@CreateItem');
+    Route::post('updateItem', 'DummyViewApiController@UpdateItem');
+    Route::delete('DummyRoutes/item/{item_id?}', 'DummyViewApiController@deleteItem');

@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\DummyModel;
+use App\Repos\DummyRepo;
+use Alert;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+class DummyModelApiController extends Controller
+{
+     public function __construct(DummyRepo $repo)
+        {
+            $this->repo = $repo;
+        }
+
+        /**
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function ReturnAll(Request $request)
+        {
+            $limit = $request->has('limit') ? $request->limit : 10;
+            $offset = $request->has('offset') ? $request->offset : 0;
+            $items = DummyModel::limit($limit)->offset($offset)->get();
+            return MyResponse(0, $items, MassageEn()[0], 200);
+        }
+
+        /**
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function ReturnById(Request $request)
+        {
+            $itemId = $request->id;
+            $item = DummyModel::where('id',$itemId)->first();
+            if(!$item){
+            return MyResponse(7, null, MassageEn()[7], 203);
+            }
+            return MyResponse(0, $item, MassageEn()[0], 200);
+        }
+
+        /**
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function CreateItem(Request $request)
+        {
+            $data = $request->all();
+            $DummyModel = new DummyModel;
+            validate($data, $DummyModel->validation, true);
+            $DummyModel->save($data);
+            return MyResponse(0, $DummyModel, MassageEn()[0], 200);
+
+        }
+
+        /**
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function UpdateItem(Request $request)
+        {
+             $itemId = $request->id;
+             $data = $request->all();
+             $item = DummyModel::where('id',$itemId)->first();
+              if(!$item){
+                 return MyResponse(7, null, MassageEn()[7], 203);
+              }
+             $DummyModel = new DummyModel;
+             validate($data, $DummyModel->validation, true);
+             $DummyModel->save($data);
+             return MyResponse(0, $DummyModel, MassageEn()[0], 200);
+        }
+}

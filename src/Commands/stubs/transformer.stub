@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Transformers;
+use App\DummyModel;
+
+use Illuminate\Database\Eloquent\Model;
+ class DummyModelTransformer extends AbstractTransformer
+{
+
+     public function transformModel(Model $item)
+     {
+         $output = [
+             '' => ,
+         ];
+         $output = TransformToNotNull($output);
+         return $output;
+     }
+     public function transformModelAr(Model $item){
+         $output = [
+             '' => ,
+         ];
+         $output = TransformToNotNull($output);
+         return $output;
+     }
+
+
+ }
