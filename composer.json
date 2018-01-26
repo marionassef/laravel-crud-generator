@@ -1,0 +1,13 @@
+{
+    "name": "marionassef/laravel-crud-generator",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {},
+    "authors": [
+        {
+            "name": "mario nassef",
+            "email": "developer.mario.nassef@gmail.com"
+        }
+    ]
+}
