@@ -1,18 +1,17 @@
 <?php
 
-namespace marionassef\LaravelCrudGenerator;
+namespace MarioNassef\LaravelCrudGenerator;
 
 use Illuminate\Support\ServiceProvider;
-use marionassef\LaravelCrudGenerator\Commands\GenerateAdminApiController;
-use marionassef\LaravelCrudGenerator\Commands\GenerateAdminViews;
-use marionassef\LaravelCrudGenerator\Commands\GenerateAdminRoutes;
-use marionassef\LaravelCrudGenerator\Commands\GenerateAdminTransformer;
-use marionassef\LaravelCrudGenerator\Commands\GenerateAdminModel;
-use marionassef\LaravelCrudGenerator\Commands\GenerateAdminController;
-use marionassef\LaravelCrudGenerator\Commands\GenerateAdminModule;
+use MarioNassef\LaravelCrudGenerator\Commands\GenerateAdminApiController;
+use MarioNassef\LaravelCrudGenerator\Commands\GenerateAdminViews;
+use MarioNassef\LaravelCrudGenerator\Commands\GenerateAdminRoutes;
+use MarioNassef\LaravelCrudGenerator\Commands\GenerateAdminTransformer;
+use MarioNassef\LaravelCrudGenerator\Commands\GenerateAdminModel;
+use MarioNassef\LaravelCrudGenerator\Commands\GenerateAdminController;
+use MarioNassef\LaravelCrudGenerator\Commands\GenerateAdminModule;
 
-
-class laravelCrudGeneratorServiceProvider extends ServiceProvider
+class LaravelCrudGeneratorServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

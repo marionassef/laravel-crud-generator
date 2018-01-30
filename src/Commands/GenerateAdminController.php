@@ -1,6 +1,6 @@
 <?php
 
-namespace marionassef\LaravelCrudGenerator\Commands;
+namespace MarioNassef\LaravelCrudGenerator\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
