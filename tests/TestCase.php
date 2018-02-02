@@ -5,6 +5,7 @@
  * Date: 02/02/18
  * Time: 02:53 م
  */
+
 use MarioNassef\LaravelCrudGenerator\LaravelCrudGeneratorServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 

@@ -23,6 +23,11 @@
     "psr-4": {
       "MarioNassef\\LaravelCrudGenerator\\": "src"
     },
+    "autoload-dev": {
+      "psr-4": {
+        "MarioNassef\\LaravelCrudGenerator\\Tests\\": "tests"
+      }
+    },
     "files": [
       "app/Http/Controllers/Helper.php",
       "app/Http/Controllers/MassageHelper.php"
