@@ -24,8 +24,8 @@
       "MarioNassef\\LaravelCrudGenerator\\": "src"
     },
     "files": [
-      "app/Http/Controllers/Helper.php",
-      "app/Http/Controllers/MassageHelper.php"
+      "src/Helper.php",
+      "src/MassageHelper.php"
     ],
     "classmap": [
       "tests"
