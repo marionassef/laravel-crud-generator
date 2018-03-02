@@ -1,4 +1,4 @@
-**Generate crud in Laravel**
+**Generate crud in Laravel 5.5 and above**
 
 This package helps Backend developers to speed up creating dashboard and apis using command line 
 Here's how you use it, let's say we have news module so all you have to do is Run the following command in your terminal:
@@ -98,4 +98,5 @@ and also use abstract transformer from <p><a href="https://github.com/themsaid/l
 
 
 
+for any comment or issue please don't hesitate contact me at:developer.mario.nassef@gmail.coms
 **happy coding**
