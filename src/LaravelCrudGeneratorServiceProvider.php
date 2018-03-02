@@ -49,4 +49,19 @@ class LaravelCrudGeneratorServiceProvider extends ServiceProvider
     {
         //
     }
+
+    public function registerHelpers()
+    {
+        // Load the helpers in app/Http/helpers.php
+        if (file_exists($file = app_path('Http/Controller/Helper.php')))
+        {
+            require $file;
+        }
+
+        if (file_exists($file = app_path('Http/Controller/MassageHelper.php')))
+        {
+            require $file;
+        }
+    }
+
 }
