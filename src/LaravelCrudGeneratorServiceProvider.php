@@ -39,6 +39,10 @@ class LaravelCrudGeneratorServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/common' => resource_path('views/common'),
         ]);
+
+        $this->publishes([
+            __DIR__.'/Helpers' => app_path('Http/Controllers'),
+        ]);
     }
     /**
      * Register the application services.
