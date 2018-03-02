@@ -20,7 +20,7 @@ class GenerateAdminModule extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = 'will tell u later punk';
+    protected $description = 'generate admin module';
 
     /**
      * Create a new command instance.
@@ -72,6 +72,10 @@ class GenerateAdminModule extends GeneratorCommand
 
         $this->callSilent('generate:apiController', [
             'name' => $ClassName
+        ]);
+
+        $this->callSilent('make:migration', [
+            'name' => 'create_'.$ClassName.'_table'
         ]);
         $this->line('Done create Admin module');
 
