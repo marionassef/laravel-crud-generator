@@ -1,4 +1,4 @@
-<h3>**Generate crud in Laravel 5.5**</h3>
+<h2>Generate crud in Laravel 5.5</h2>
 
 <a href="https://github.com/marionassef/laravel-crud-generator/blob/master/LICENSE" rel="nofollow"><img src="https://img.shields.io/github/license/marionassef/laravel-crud-generator.svg" alt="Licence" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/marionassef/laravel-crud-generator" rel="nofollow"><img src="https://img.shields.io/github/issues/marionassef/laravel-crud-generator.svg" style="max-width:100%;"></a>
