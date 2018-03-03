@@ -30,8 +30,7 @@ that will create the following:
 
 Begin by installing the package through Composer. Run the following command in your terminal:
 
-`composer require marionassef/lanravel-crud-generator
-`
+`composer require marionassef/laravel-crud-generator`
 
 The package will automatically register a service provider and alias.
 
