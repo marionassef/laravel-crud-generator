@@ -46,7 +46,7 @@ class GenerateAdminViews extends GeneratorCommand
 
     protected function createViews($ClassName)
     {
-        $path = base_path('resources/views/dashboard' . $ClassName);
+        $path = base_path('resources/views/dashboard/' . $ClassName);
 
         if (!file_exists($path)) {
             File::makeDirectory($path, $mode = 0777, true, true);
@@ -58,7 +58,7 @@ class GenerateAdminViews extends GeneratorCommand
 
     protected function CreateOnView($view,$ClassName)
     {
-        $path = base_path('resources/views/dashboard' . $ClassName . '/' . $view . '.blade.php');
+        $path = base_path('resources/views/dashboard/' . $ClassName . '/' . $view . '.blade.php');
         $this->line('Done create view .');
         $this->files->put($path, $this->buildView($ClassName, __DIR__ . '/stubs/' . $view . '.stub'));
     }

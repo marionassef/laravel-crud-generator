@@ -1,25 +1,23 @@
 @extends('common.base')
-
 @section('content')
-
     @if(session('validationErrors'))
         <div class="alert alert-danger" role="alert">
             <button class="close" data-dismiss="alert"></button>
             {{session('validationErrors')}}
         </div>
     @endif
-   <div class="card">
-        <div class="card-block">
-            <div class="card-header no-bg b-a-0">
-                    <h4>DummyView <span class="semi-bold">Table</span></h4>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="grid simple ">
+                <div class="grid-title no-border">
                     <div class="tools">
-                        <a href="javascript:;" class="collapse"></a>
-                        <a href="javascript:;" class="reload"></a>
-                        <a href="javascript:;" class="remove"></a>
                     </div>
                 </div>
-
-
+                <div class="grid-body no-border">
+                    <h4>DummyView <span class="semi-bold">Table</span></h4>
+                    <div class="tools">
+                    </div>
+                </div>
                 <div class="grid-body no-border">
                     <form role="form" >
                         {{csrf_field()}}
@@ -52,5 +50,6 @@
                     </form>
                 </div>
             </div>
+        </div>
         </div>
 @stop

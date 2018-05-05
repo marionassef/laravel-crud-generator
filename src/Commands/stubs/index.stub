@@ -23,7 +23,7 @@
                 </div>
                 <div class="grid-body no-border">
                     <h3>{{'DummyView'}} <span class="semi-bold">Table</span></h3>
-                    <div><a href="{{url('dashboard/DummyView/item')}}" style="float: right" class="btn btn-info btn-round m-r-xs m-b-xs">Add {{'dummyclass'}}</a><br></div>
+                    <div><a href="{{url('dashboard/DummyView/item')}}" style="float: right" class="btn btn-info btn-round m-r-xs m-b-xs">Add New</a><br></div>
 
                         <div class="card-block">
                         <div class="table-responsive">
@@ -53,8 +53,10 @@
                                                    class="btn btn-primary btn-round m-r-xs m-b-xs">View</a>
                                                 <a href="{{url('dashboard/DummyView/item/'.$item->id)}}"
                                                    class="btn btn-warning btn-round m-r-xs m-b-xs">Edit</a>
-                                                <a href="{{url('dashboard/DummyView/item/'.$item->id)}}"
-                                                   class="btn btn-danger btn-round m-r-xs m-b-xs deleter">Delete</a>
+                                                <span onclick="deleteThisItem(this)"
+                                                   data-link="{{ url('dashboard/DummyView/'.$item->id.'/delete') }}"
+                                                   class="btn btn-danger btn-round m-r-xs m-b-xs deleter">
+                                                delete</span>
                                             </div>
 
                                         </td>

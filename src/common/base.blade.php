@@ -551,5 +551,7 @@
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN CORE TEMPLATE JS -->
 <script src="{{asset('assets/js/dashboard_v2.js')}}" type="text/javascript"></script>
+@stack('scripts')
+@yield('scripts')
 </body>
 </html>

@@ -45,7 +45,7 @@ class DummyClass extends Controller
         {
             $item = DummyModel::firstOrNew(['id'=>$item_id]);
 
-            return view('dashboard/DummyModel.View', compact('item'));
+            return view('dashboard/DummyModel.view', compact('item'));
         }
 
         /**
@@ -74,7 +74,7 @@ class DummyClass extends Controller
             return redirect('dashboard/DummyModel')->with('success', true);
         }
 
-        public function Delete($item_id = null)
+        public function delete($item_id = null)
             {
                 $item =DummyModel::firstOrNew(['id'=>$item_id]);
                 $item->delete();

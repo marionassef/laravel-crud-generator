@@ -51,7 +51,7 @@ you will find the following commends:
 ` generate:adminModule  {name}
 `
 
-I had described that in above
+I had described that above
 
 `generate:adminController {name}`
 
