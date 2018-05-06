@@ -11,14 +11,13 @@ class DummyClass extends Model
    protected $guarded = [];
    protected $hidden = [];
    protected $dates = [];
-   public $incrementing = false;
 
-   public function createValidation($id){
+   public function createValidation(){
         return [
         ];
    }
 
-   public function updateValidation($id){
+   public function updateValidation(){
            return [
 
            ];

@@ -58,14 +58,14 @@ class DummyClass extends Controller
             $data = request()->all();
             $Model =  new DummyModel;
             if (!$item->id) {
-            $validator = Validator::make($data,$Model->createValidation);
+            $validator = Validator::make($data,$Model->createValidation());
                 if ($validator->fails()) {
                     return redirect()->back()->withErrors($validator);
                 }
                $generateId = Uuid::uuid1();
                $item_id = $generateId->toString();
             }
-             $validator = Validator::make($data,$Model->updateValidation);
+             $validator = Validator::make($data,$Model->updateValidation());
                 if ($validator->fails()) {
                     return redirect()->back()->withErrors($validator);
                 }

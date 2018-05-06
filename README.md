@@ -43,6 +43,12 @@ that will publish the assets views for admin panel and helper files
 
 **Usage**
 
+run 
+`php artisan make:auth`
+
+this will ask you if you want to replace home view **don't replace**
+if you accidentally replace the file it's okay Download home.blade from src and replace it     
+
 by running:
 `php artisan 
 `
@@ -84,23 +90,16 @@ that will just create views
 that will just create api Controller with crud functions 
 
 
+you need to add tabs for the modules you generated to menu file you will find it in views/common
+
 that all.
 
 **Please Note** 
 
-this package use unique id for tables by default for security reason you will find documentation   
-<p><a href="https://github.com/webpatser/laravel-uuid">Here</a> </p>
+this package use abstract transformer from <p><a href="https://github.com/themsaid/laravel-model-transformer">Here</a> </p>
 
-if you decided to not use unique id, all you have to do is remove this line from all of your models:
-
-`   protected $incrementing = false;
-`
-
-and also use abstract transformer from <p><a href="https://github.com/themsaid/laravel-model-transformer">Here</a> </p>
-
-
+thanks for Mohamed Said
 
 for any comment or issue please don't hesitate to contact me:developer.mario.nassef@gmail.com
-
 
 **happy coding**
