@@ -41,7 +41,7 @@ class LaravelCrudGeneratorServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__.'/home.blade.php' => resource_path('views'),
+            __DIR__.'/home.blade.php' => resource_path('views/home.blade.php'),
         ]);
 
         $this->publishes([
